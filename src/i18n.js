@@ -1,0 +1,103 @@
+export const languages = [
+  { code: 'fr', label: 'FR', name: 'Français', dir: 'ltr', locale: 'fr-FR' },
+  { code: 'en', label: 'EN', name: 'English', dir: 'ltr', locale: 'en-US' },
+  { code: 'ar', label: 'ع', name: 'العربية', dir: 'rtl', locale: 'en-US' },
+];
+
+export const translations = {
+  fr: {
+    meta: { title: 'Dev is your Solution — Web, mobile & social media' },
+    nav: { services: 'Services', sites: 'Sites web', social: 'Social media', approach: 'Notre approche', contact: 'Parlons projet', main: 'Navigation principale', home: 'Dev is your Solution, accueil', open: 'Ouvrir le menu', close: 'Fermer le menu', language: 'Langue' },
+    topbar: { location: 'Localisation', place: 'Oued Zem, Béni Mellal-Khénifra, Maroc', follow: 'Suivez-nous', soon: 'bientôt', soonTitle: 'Bientôt disponible' },
+    hero: { topLeft: 'STUDIO DIGITAL INDÉPENDANT', topRight: 'CRÉATIVITÉ + TECHNOLOGIE', eyebrow: 'LE DIGITAL, EN PLUS HUMAIN.', titleSpan: 'Le digital', titleRest: ' en toute simplicité.', text: 'Sites web, applications mobiles et social media. On donne vie à vos ambitions digitales.', discover: 'Découvrir nos services', footerLeft: 'FAISONS QUELQUE CHOSE DE GRAND.', scroll: 'SCROLL POUR EXPLORER' },
+    ticker: ['DE L’IDÉE À L’IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
+    intro: { label: 'QUI SOMMES-NOUS', titleA: 'Une idée. Une vision.', titleB: 'Et tout devient possible.', text: 'Nous aidons les marques et les entrepreneurs à prendre leur place dans le monde digital, avec des expériences aussi belles qu’efficaces.', link: 'FAISONS CONNAISSANCE', photos: [
+      { caption: 'Une équipe à votre écoute', alt: 'Équipe travaillant ensemble sur un projet digital' },
+      { caption: 'Code propre & rapide', alt: 'Développeur codant sur un ordinateur portable' },
+      { caption: 'Stratégie sur mesure', alt: 'Réunion de stratégie avec un client' },
+    ] },
+    services: { label: 'CE QU’ON FAIT', titleA: 'Du premier clic', titleB: 'au ', titleEm: 'grand déclic.', textA: 'Une équipe, plusieurs savoir-faire.', textB: 'Tout ce qu’il faut pour aller plus loin.', arrow: 'Parler de votre projet', items: [
+      { category: 'WEB DESIGN & DÉVELOPPEMENT', title: 'Des sites qui font\nla différence.', description: 'Landing pages et sites web sur mesure, pensés pour captiver votre audience et transformer les visites en opportunités.', tags: ['Landing pages', 'Sites vitrines', 'E-commerce'], alt: 'Ordinateur portable affichant un tableau de bord web' },
+      { category: 'APPLICATIONS MOBILES', title: 'Vos idées, dans\nleur poche.', description: 'Des applications mobiles intuitives et performantes qui rapprochent votre marque de vos utilisateurs, partout et à tout moment.', tags: ['iOS & Android', 'UI / UX', 'Développement'], alt: 'Smartphone tenu en main avec des applications' },
+      { category: 'SOCIAL MEDIA', title: 'Faites parler\nde vous.', description: 'Développez votre présence sur les réseaux sociaux avec des solutions adaptées à vos objectifs de visibilité et d’engagement.', tags: ['Abonnés', 'Likes & commentaires', 'Vues'], alt: 'Icônes de réseaux sociaux sur un smartphone' },
+    ] },
+    sites: { label: 'VOTRE SITE', titleA: 'Quel site', titleEm: 'voulez-vous ?', textA: 'Choisissez le type de projet qui vous correspond.', textB: 'On en parle directement sur WhatsApp.', step1: 'Type de site', step2: 'Votre nom', step3: 'Votre idée', nameLabel: 'Nom ou entreprise', namePh: 'Ex : Café Atlas', detailsLabel: 'Décrivez votre projet (optionnel)', detailsPh: 'Pages, fonctionnalités, exemples...', project: 'Projet :', button: 'Demander sur WhatsApp', types: [
+      { name: 'Landing page', description: 'Une page percutante pour vendre un produit ou une offre.' },
+      { name: 'Site vitrine', description: 'Présentez votre entreprise, vos services et vos contacts.' },
+      { name: 'E-commerce', description: 'Une boutique en ligne pour vendre vos produits.' },
+      { name: 'Blog / Média', description: 'Publiez des articles et partagez votre contenu.' },
+      { name: 'Site de réservation', description: 'Rendez-vous, tables ou chambres réservés en ligne.' },
+      { name: 'Application mobile', description: 'Une app iOS & Android pour vos clients.' },
+      { name: 'Plateforme sur mesure', description: 'Dashboard, espace membre ou outil spécifique.' },
+    ], message: (type, name, details) => `Bonjour, je veux un projet :\n\nType : ${type}\nNom : ${name}\nDétails : ${details || '-'}` },
+    social: { label: 'BOOST SOCIAL MEDIA', titleA: 'Plus de visibilité,', titleEm: 'en quelques clics.', textA: 'Choisissez la plateforme, le service et la quantité.', textB: 'Votre commande arrive directement sur WhatsApp.', step1: 'Plateforme', step2: 'Service', step3: 'Quantité', step4: 'Votre compte', types: { followers: 'Abonnés', likes: 'Likes', views: 'Vues' }, otherQty: 'Autre quantité', accountLabel: 'Nom d’utilisateur ou lien de la publication', accountPh: '@votrecompte ou https://...', on: 'sur', button: 'Commander sur WhatsApp', message: (platform, type, qty, link) => `Bonjour, je veux commander :\n\nPlateforme : ${platform}\nService : ${type}\nQuantité : ${qty}\nCompte / lien : ${link}` },
+    statement: { label: 'NOTRE PHILOSOPHIE', lines: ['Du sens.', 'Du style.'], em: 'Des résultats.', text: 'Chaque projet est une nouvelle histoire. Construisons la vôtre ensemble.', button: 'VOTRE PROJET COMMENCE ICI' },
+    contact: { label: 'ON SE LANCE ?', titleA: 'Parlons de', titleEm: 'votre idée.', text: 'Un projet en tête ? Une question ? Racontez-nous. Les plus belles collaborations commencent par un bonjour.', available: 'DISPONIBLES POUR DE NOUVEAUX PROJETS', formTitle: 'Envoyez-nous un message', formSub: 'Réponse rapide sur WhatsApp', name: 'VOTRE NOM', namePh: 'Ex : Ahmed', phone: 'TÉLÉPHONE', phonePh: 'Optionnel', interested: 'JE SUIS INTÉRESSÉ(E) PAR', options: ['Site web / Landing page', 'Application mobile', 'Social media', 'Autre projet'], project: 'VOTRE PROJET', projectPh: 'Parlez-nous un peu de votre idée...', button: 'Envoyer sur WhatsApp', region: 'Région Béni Mellal-Khénifra, Maroc', city: 'Oued Zem', mapTitle: 'Carte : Oued Zem, Maroc', message: (name, service, text, phone) => `Bonjour, je m'appelle ${name}.\n\nProjet : ${service}\n${text}${phone ? `\n\nTéléphone : ${phone}` : ''}` },
+    links: { title: 'SUIVEZ-NOUS & ÉCRIVEZ-NOUS', write: 'Écrivez-nous', view: 'Voir la page', soon: 'Lien bientôt disponible' },
+    footer: { tagline: 'DES IDÉES QUI PRENNENT VIE.', back: 'RETOUR EN HAUT', place: 'OUED ZEM · BÉNI MELLAL-KHÉNIFRA · MAROC', services: 'WEB · MOBILE · SOCIAL' },
+  },
+
+  en: {
+    meta: { title: 'Dev is your Solution — Web, mobile & social media' },
+    nav: { services: 'Services', sites: 'Websites', social: 'Social media', approach: 'Our approach', contact: 'Let’s talk', main: 'Main navigation', home: 'Dev is your Solution, home', open: 'Open menu', close: 'Close menu', language: 'Language' },
+    topbar: { location: 'Location', place: 'Oued Zem, Béni Mellal-Khénifra, Morocco', follow: 'Follow us', soon: 'coming soon', soonTitle: 'Coming soon' },
+    hero: { topLeft: 'INDEPENDENT DIGITAL STUDIO', topRight: 'CREATIVITY + TECHNOLOGY', eyebrow: 'DIGITAL, MORE HUMAN.', titleSpan: 'Digital', titleRest: ' made simple.', text: 'Websites, mobile apps and social media. We bring your digital ambitions to life.', discover: 'Discover our services', footerLeft: 'LET’S BUILD SOMETHING GREAT.', scroll: 'SCROLL TO EXPLORE' },
+    ticker: ['FROM IDEA TO IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
+    intro: { label: 'WHO WE ARE', titleA: 'One idea. One vision.', titleB: 'And anything becomes possible.', text: 'We help brands and entrepreneurs claim their place in the digital world, with experiences that are as beautiful as they are effective.', link: 'LET’S GET TO KNOW EACH OTHER', photos: [
+      { caption: 'A team that listens', alt: 'Team working together on a digital project' },
+      { caption: 'Clean & fast code', alt: 'Developer coding on a laptop' },
+      { caption: 'Tailored strategy', alt: 'Strategy meeting with a client' },
+    ] },
+    services: { label: 'WHAT WE DO', titleA: 'From the first click', titleB: 'to the ', titleEm: 'big breakthrough.', textA: 'One team, many skills.', textB: 'Everything you need to go further.', arrow: 'Talk about your project', items: [
+      { category: 'WEB DESIGN & DEVELOPMENT', title: 'Websites that make\na difference.', description: 'Custom landing pages and websites, designed to captivate your audience and turn visits into opportunities.', tags: ['Landing pages', 'Business websites', 'E-commerce'], alt: 'Laptop showing a web dashboard' },
+      { category: 'MOBILE APPS', title: 'Your ideas, in\ntheir pocket.', description: 'Intuitive, high-performance mobile apps that bring your brand closer to your users, anywhere, anytime.', tags: ['iOS & Android', 'UI / UX', 'Development'], alt: 'Hand holding a smartphone with apps' },
+      { category: 'SOCIAL MEDIA', title: 'Get people\ntalking.', description: 'Grow your social media presence with solutions tailored to your visibility and engagement goals.', tags: ['Followers', 'Likes & comments', 'Views'], alt: 'Social media icons on a smartphone' },
+    ] },
+    sites: { label: 'YOUR WEBSITE', titleA: 'Which website', titleEm: 'do you want?', textA: 'Choose the type of project that fits you.', textB: 'Let’s discuss it directly on WhatsApp.', step1: 'Website type', step2: 'Your name', step3: 'Your idea', nameLabel: 'Name or company', namePh: 'e.g. Café Atlas', detailsLabel: 'Describe your project (optional)', detailsPh: 'Pages, features, examples...', project: 'Project:', button: 'Ask on WhatsApp', types: [
+      { name: 'Landing page', description: 'A powerful page to sell a product or an offer.' },
+      { name: 'Business website', description: 'Present your company, services and contact details.' },
+      { name: 'E-commerce', description: 'An online store to sell your products.' },
+      { name: 'Blog / Media', description: 'Publish articles and share your content.' },
+      { name: 'Booking website', description: 'Appointments, tables or rooms booked online.' },
+      { name: 'Mobile app', description: 'An iOS & Android app for your customers.' },
+      { name: 'Custom platform', description: 'Dashboard, member area or specific tool.' },
+    ], message: (type, name, details) => `Hello, I would like a project:\n\nType: ${type}\nName: ${name}\nDetails: ${details || '-'}` },
+    social: { label: 'SOCIAL MEDIA BOOST', titleA: 'More visibility,', titleEm: 'in just a few clicks.', textA: 'Choose the platform, the service and the quantity.', textB: 'Your order goes straight to WhatsApp.', step1: 'Platform', step2: 'Service', step3: 'Quantity', step4: 'Your account', types: { followers: 'Followers', likes: 'Likes', views: 'Views' }, otherQty: 'Other quantity', accountLabel: 'Username or post link', accountPh: '@youraccount or https://...', on: 'on', button: 'Order on WhatsApp', message: (platform, type, qty, link) => `Hello, I would like to order:\n\nPlatform: ${platform}\nService: ${type}\nQuantity: ${qty}\nAccount / link: ${link}` },
+    statement: { label: 'OUR PHILOSOPHY', lines: ['Meaning.', 'Style.'], em: 'Results.', text: 'Every project is a new story. Let’s build yours together.', button: 'YOUR PROJECT STARTS HERE' },
+    contact: { label: 'READY TO START?', titleA: 'Let’s talk about', titleEm: 'your idea.', text: 'A project in mind? A question? Tell us. The best collaborations start with a hello.', available: 'AVAILABLE FOR NEW PROJECTS', formTitle: 'Send us a message', formSub: 'Quick reply on WhatsApp', name: 'YOUR NAME', namePh: 'e.g. Ahmed', phone: 'PHONE', phonePh: 'Optional', interested: 'I’M INTERESTED IN', options: ['Website / Landing page', 'Mobile app', 'Social media', 'Other project'], project: 'YOUR PROJECT', projectPh: 'Tell us a bit about your idea...', button: 'Send on WhatsApp', region: 'Béni Mellal-Khénifra region, Morocco', city: 'Oued Zem', mapTitle: 'Map: Oued Zem, Morocco', message: (name, service, text, phone) => `Hello, my name is ${name}.\n\nProject: ${service}\n${text}${phone ? `\n\nPhone: ${phone}` : ''}` },
+    links: { title: 'FOLLOW US & GET IN TOUCH', write: 'Message us', view: 'View page', soon: 'Link coming soon' },
+    footer: { tagline: 'IDEAS THAT COME TO LIFE.', back: 'BACK TO TOP', place: 'OUED ZEM · BÉNI MELLAL-KHÉNIFRA · MOROCCO', services: 'WEB · MOBILE · SOCIAL' },
+  },
+
+  ar: {
+    meta: { title: 'Dev is your Solution — مواقع، تطبيقات وسوشيال ميديا' },
+    nav: { services: 'خدماتنا', sites: 'المواقع', social: 'السوشيال ميديا', approach: 'من نحن', contact: 'تواصل معنا', main: 'القائمة الرئيسية', home: 'Dev is your Solution، الرئيسية', open: 'فتح القائمة', close: 'إغلاق القائمة', language: 'اللغة' },
+    topbar: { location: 'موقعنا', place: 'وادي زم، جهة بني ملال خنيفرة، المغرب', follow: 'تابعونا', soon: 'قريباً', soonTitle: 'متوفر قريباً' },
+    hero: { topLeft: 'استوديو رقمي مستقل', topRight: 'إبداع + تكنولوجيا', eyebrow: 'الرقمي بلمسة إنسانية.', titleSpan: 'الرقمي', titleRest: ' بكل بساطة.', text: 'مواقع إلكترونية، تطبيقات هاتف وسوشيال ميديا. نحوّل طموحاتك الرقمية إلى واقع.', discover: 'اكتشف خدماتنا', footerLeft: 'لنصنع شيئاً عظيماً.', scroll: 'مرّر للاستكشاف' },
+    ticker: ['من الفكرة إلى النتيجة', 'تصميم المواقع', 'تطبيقات الهاتف', 'السوشيال ميديا'],
+    intro: { label: 'من نحن', titleA: 'فكرة. رؤية.', titleB: 'وكل شيء يصبح ممكناً.', text: 'نساعد العلامات التجارية وأصحاب المشاريع على إيجاد مكانهم في العالم الرقمي، بتجارب جميلة وفعّالة في آن واحد.', link: 'تعرّف علينا', photos: [
+      { caption: 'فريق يستمع إليك', alt: 'فريق يعمل معاً على مشروع رقمي' },
+      { caption: 'برمجة نظيفة وسريعة', alt: 'مبرمج يعمل على حاسوب محمول' },
+      { caption: 'استراتيجية على المقاس', alt: 'اجتماع استراتيجي مع عميل' },
+    ] },
+    services: { label: 'ماذا نقدّم', titleA: 'من أول نقرة', titleB: 'إلى ', titleEm: 'النجاح الكبير.', textA: 'فريق واحد، خبرات متعددة.', textB: 'كل ما تحتاجه لتذهب أبعد.', arrow: 'تحدّث معنا عن مشروعك', items: [
+      { category: 'تصميم وتطوير المواقع', title: 'مواقع تصنع\nالفرق.', description: 'صفحات هبوط ومواقع على المقاس، مصممة لجذب جمهورك وتحويل الزيارات إلى فرص حقيقية.', tags: ['صفحات هبوط', 'مواقع تعريفية', 'متاجر إلكترونية'], alt: 'حاسوب محمول يعرض لوحة تحكم' },
+      { category: 'تطبيقات الهاتف', title: 'أفكارك، في\nجيب عملائك.', description: 'تطبيقات هاتف سهلة وسريعة تقرّب علامتك التجارية من مستخدميك، في كل مكان وزمان.', tags: ['iOS و Android', 'UI / UX', 'تطوير'], alt: 'هاتف ذكي في اليد مع تطبيقات' },
+      { category: 'السوشيال ميديا', title: 'اجعل الجميع\nيتحدث عنك.', description: 'طوّر حضورك على مواقع التواصل الاجتماعي بحلول تناسب أهدافك في الظهور والتفاعل.', tags: ['متابعون', 'إعجابات وتعليقات', 'مشاهدات'], alt: 'أيقونات مواقع التواصل على هاتف ذكي' },
+    ] },
+    sites: { label: 'موقعك', titleA: 'أي موقع', titleEm: 'تريد؟', textA: 'اختر نوع المشروع الذي يناسبك.', textB: 'نتحدث عنه مباشرة على واتساب.', step1: 'نوع الموقع', step2: 'اسمك', step3: 'فكرتك', nameLabel: 'الاسم أو اسم الشركة', namePh: 'مثال: مقهى أطلس', detailsLabel: 'صف مشروعك (اختياري)', detailsPh: 'الصفحات، الخصائص، أمثلة...', project: 'المشروع:', button: 'اطلب عبر واتساب', types: [
+      { name: 'صفحة هبوط', description: 'صفحة قوية لبيع منتج أو عرض.' },
+      { name: 'موقع تعريفي', description: 'قدّم شركتك وخدماتك ومعلومات التواصل.' },
+      { name: 'متجر إلكتروني', description: 'متجر على الإنترنت لبيع منتجاتك.' },
+      { name: 'مدونة / إعلام', description: 'انشر المقالات وشارك محتواك.' },
+      { name: 'موقع حجوزات', description: 'مواعيد، طاولات أو غرف تُحجز أونلاين.' },
+      { name: 'تطبيق هاتف', description: 'تطبيق iOS و Android لعملائك.' },
+      { name: 'منصة على المقاس', description: 'لوحة تحكم، فضاء أعضاء أو أداة خاصة.' },
+    ], message: (type, name, details) => `السلام عليكم، أريد مشروعاً:\n\nالنوع: ${type}\nالاسم: ${name}\nالتفاصيل: ${details || '-'}` },
+    social: { label: 'تعزيز السوشيال ميديا', titleA: 'ظهور أكثر،', titleEm: 'ببضع نقرات فقط.', textA: 'اختر المنصة والخدمة والكمية.', textB: 'طلبك يصلنا مباشرة على واتساب.', step1: 'المنصة', step2: 'الخدمة', step3: 'الكمية', step4: 'حسابك', types: { followers: 'متابعون', likes: 'إعجابات', views: 'مشاهدات' }, otherQty: 'كمية أخرى', accountLabel: 'اسم المستخدم أو رابط المنشور', accountPh: '@حسابك أو https://...', on: 'على', button: 'اطلب عبر واتساب', message: (platform, type, qty, link) => `السلام عليكم، أريد أن أطلب:\n\nالمنصة: ${platform}\nالخدمة: ${type}\nالكمية: ${qty}\nالحساب / الرابط: ${link}` },
+    statement: { label: 'فلسفتنا', lines: ['معنى.', 'أسلوب.'], em: 'نتائج.', text: 'كل مشروع قصة جديدة. لنبنِ قصتك معاً.', button: 'مشروعك يبدأ من هنا' },
+    contact: { label: 'هل نبدأ؟', titleA: 'لنتحدث عن', titleEm: 'فكرتك.', text: 'عندك مشروع؟ عندك سؤال؟ احكِ لنا. أجمل الشراكات تبدأ بكلمة مرحباً.', available: 'متاحون لمشاريع جديدة', formTitle: 'أرسل لنا رسالة', formSub: 'رد سريع على واتساب', name: 'اسمك', namePh: 'مثال: أحمد', phone: 'الهاتف', phonePh: 'اختياري', interested: 'أنا مهتم بـ', options: ['موقع إلكتروني / صفحة هبوط', 'تطبيق هاتف', 'السوشيال ميديا', 'مشروع آخر'], project: 'مشروعك', projectPh: 'احكِ لنا قليلاً عن فكرتك...', button: 'أرسل عبر واتساب', region: 'جهة بني ملال خنيفرة، المغرب', city: 'وادي زم', mapTitle: 'خريطة: وادي زم، المغرب', message: (name, service, text, phone) => `السلام عليكم، اسمي ${name}.\n\nالمشروع: ${service}\n${text}${phone ? `\n\nالهاتف: ${phone}` : ''}` },
+    links: { title: 'تابعونا وراسلونا', write: 'راسلنا', view: 'زيارة الصفحة', soon: 'الرابط قريباً' },
+    footer: { tagline: 'أفكار تتحول إلى واقع.', back: 'العودة للأعلى', place: 'وادي زم · بني ملال خنيفرة · المغرب', services: 'مواقع · تطبيقات · سوشيال' },
+  },
+};
