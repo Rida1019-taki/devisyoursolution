@@ -41,6 +41,8 @@ const introPhotos = [
   'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=900&q=80',
 ];
 
+const BrandMark = () => <><span className="brand-top">dev<i className="brand-cursor" /></span><span className="brand-sub">is your solution</span></>;
+
 function openWhatsApp(message) {
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
 }
@@ -217,7 +219,7 @@ export default function App() {
         <div className="topbar-social"><span className="tb-follow">{t.topbar.follow}</span>{socialLinks.map(({ name, url, Logo, className }) => url ? <a key={name} className={`tb-social ${className}`} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} className={`tb-social ${className} soon`} aria-label={`${name} (${t.topbar.soon})`} title={t.topbar.soonTitle}><Logo /></span>)}</div>
       </div>
       <header className="header">
-        <a className="logo" href="#accueil" aria-label={t.nav.home} dir="ltr"><span className="logo-mark">✳</span> dev is your<span>&nbsp;solution.</span></a>
+        <a className="brand" href="#accueil" aria-label={t.nav.home} dir="ltr"><BrandMark /></a>
         <nav className={menuOpen ? 'nav open' : 'nav'} aria-label={t.nav.main}>
           <a href="#services" onClick={closeMenu}>{t.nav.services}</a>
           <a href="#sites" onClick={closeMenu}>{t.nav.sites}</a>
@@ -305,7 +307,7 @@ export default function App() {
           </div>
         </section>
       </main>
-      <footer className="footer"><div className="wrap"><div className="footer-top"><a className="logo footer-logo" href="#accueil" dir="ltr"><span className="logo-mark">✳</span> dev is your<span>&nbsp;solution.</span></a><p>{t.footer.tagline}</p><div className="footer-social">{socialLinks.map(({ name, url, Logo }) => url ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} aria-label={`${name} (${t.topbar.soon})`}><Logo /></span>)}</div><a href="#accueil" className="back-top">{t.footer.back} <ArrowUpRight size={16} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} DEV IS YOUR SOLUTION</span><span>{t.footer.place}</span><span>{t.footer.services}</span></div></div></footer>
+      <footer className="footer"><div className="wrap"><div className="footer-top"><a className="brand footer-brand" href="#accueil" aria-label={t.nav.home} dir="ltr"><BrandMark /></a><p>{t.footer.tagline}</p><div className="footer-social">{socialLinks.map(({ name, url, Logo }) => url ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} aria-label={`${name} (${t.topbar.soon})`}><Logo /></span>)}</div><a href="#accueil" className="back-top">{t.footer.back} <ArrowUpRight size={16} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} DEV IS YOUR SOLUTION</span><span>{t.footer.place}</span><span>{t.footer.services}</span></div></div></footer>
     </>
   );
 }
