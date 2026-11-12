@@ -58,3 +58,27 @@ html[dir=rtl] em,html[dir=rtl] .hero h1 span{font-family:'Cairo',sans-serif;font
 [dir=rtl] .lucide-arrow-up-right{transform:scaleX(-1)}
 [dir=rtl] .ticker{direction:ltr}
 [dir=rtl] .custom-qty input[type=number]{text-align:right}
+.site-picker{display:grid;grid-template-columns:1.55fr 1fr;gap:64px;align-items:start}
+.picker-group+.picker-group{margin-top:38px;padding-top:34px;border-top:1px solid #d9dcd2}
+.picker-group-title{display:flex;align-items:baseline;gap:10px;margin:0 0 18px;font-family:Georgia,serif;font-style:italic;font-weight:400;font-size:27px;letter-spacing:0}
+.picker-group-title span{font-family:'DM Sans',sans-serif;font-style:normal;font-size:12px;font-weight:600;color:#8a8f84}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:11px 18px 11px 14px;border:1px solid #c6cabf;border-radius:100px;background:transparent;color:var(--ink);font-size:15px;font-weight:500;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.chip svg{color:#7b8076;flex:none;transition:color .18s}
+.chip:hover{background:white;border-color:var(--ink)}
+.chip.active{background:var(--ink);border-color:var(--ink);color:white}
+.chip.active svg{color:var(--lime)}
+.brief{position:sticky;top:24px;padding:32px;border-radius:24px;background:var(--ink);color:#f3f5ee}
+.brief-tag{display:block;margin-bottom:22px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9ba195}
+.brief-icon{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;background:var(--lime);color:var(--ink)}
+.brief-title{margin:20px 0 10px;font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:500;line-height:1.1;letter-spacing:0}
+.brief-desc{margin:0 0 26px;padding-bottom:24px;border-bottom:1px dashed #41463c;color:#b9beb2;font-size:14px;line-height:1.65}
+.brief-field{display:block;margin-bottom:18px;font-size:12px;color:#9ba195}
+.brief-field input,.brief-field textarea{display:block;width:100%;margin-top:6px;padding:10px 0;border:0;border-bottom:1px solid #4a4f45;border-radius:0;background:transparent;color:white;font:inherit;font-size:15px;outline:none;resize:none}
+.brief-field input::placeholder,.brief-field textarea::placeholder{color:#6f746a}
+.brief-field input:focus,.brief-field textarea:focus{border-bottom-color:var(--lime)}
+.brief .whatsapp-button{width:100%;justify-content:center;margin-top:8px}
+html[dir=rtl] .picker-group-title{font-family:'Cairo',sans-serif;font-style:normal;font-weight:700;font-size:22px}
+html[dir=rtl] .brief-title{font-family:'Cairo',sans-serif;font-weight:700}
+@media(max-width:900px){.site-picker{grid-template-columns:1fr;gap:36px}.brief{position:static}}
+@media(max-width:650px){.chip{padding:9px 14px 9px 11px;font-size:14px}.picker-group-title{font-size:23px}.brief{padding:24px 20px}}

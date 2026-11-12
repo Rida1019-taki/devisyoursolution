@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowUpRight, Building2, CalendarCheck, Check, ChevronDown, Eye, Globe, Heart, LayoutDashboard, MapPin, Menu, Newspaper, Rocket, ShoppingCart, Smartphone, Users, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Briefcase, Building2, CalendarCheck, Car, Check, ChevronDown, Dumbbell, Eye, Globe, GraduationCap, Heart, Hotel, House, LayoutDashboard, MapPin, Menu, Newspaper, PartyPopper, Plane, Rocket, Scissors, Shirt, ShoppingCart, Smartphone, Stethoscope, Users, UtensilsCrossed, Wrench, X } from 'lucide-react';
 import { languages, translations } from './i18n.js';
 
 const WHATSAPP_NUMBER = '212674118928';
@@ -23,7 +23,8 @@ const boostTypes = [
   { id: 'views', Icon: Eye },
 ];
 const quantities = [100, 500, 1000, 5000, 10000];
-const siteIcons = [Rocket, Building2, ShoppingCart, Newspaper, CalendarCheck, Smartphone, LayoutDashboard];
+const siteIcons = [Rocket, Building2, ShoppingCart, Newspaper, CalendarCheck, Smartphone, LayoutDashboard, UtensilsCrossed, Car, Hotel, Scissors, House, Stethoscope, GraduationCap, Dumbbell, Plane, Shirt, Briefcase, PartyPopper, Wrench];
+const GENERAL_SITE_TYPES = 7;
 const socialLinks = [
   { name: 'WhatsApp', url: `https://wa.me/${WHATSAPP_NUMBER}`, Logo: WhatsAppLogo, className: 'whatsapp' },
   { name: 'Instagram', url: INSTAGRAM_URL, Logo: InstagramLogo, className: 'instagram' },
@@ -67,7 +68,8 @@ function SiteOrder({ t }) {
   const [typeIndex, setTypeIndex] = useState(0);
   const [name, setName] = useState('');
   const [details, setDetails] = useState('');
-  const typeName = t.sites.types[typeIndex].name;
+  const { name: typeName, description: typeDescription } = t.sites.types[typeIndex];
+  const TypeIcon = siteIcons[typeIndex];
 
   function sendOrder(event) {
     event.preventDefault();
@@ -79,26 +81,26 @@ function SiteOrder({ t }) {
       <div className="wrap">
         <div className="section-label"><span className="label-dot" /> {t.sites.label} <span className="label-number">/ 03</span></div>
         <div className="section-heading"><h2>{t.sites.titleA}<br /><em>{t.sites.titleEm}</em></h2><p>{t.sites.textA}<br />{t.sites.textB}</p></div>
-        <form className="boost-card site-card" onSubmit={sendOrder}>
-          <fieldset className="full">
-            <legend><span>1</span> {t.sites.step1}</legend>
-            <div className="site-grid">{t.sites.types.map(({ name: label, description }, index) => {
-              const Icon = siteIcons[index];
-              return <button type="button" key={index} className={typeIndex === index ? 'site-type active' : 'site-type'} aria-pressed={typeIndex === index} onClick={() => setTypeIndex(index)}><span className="site-icon"><Icon size={22} /></span><strong>{label}</strong><small>{description}</small></button>;
-            })}</div>
-          </fieldset>
-          <fieldset>
-            <legend><span>2</span> {t.sites.step2}</legend>
-            <label className="custom-qty">{t.sites.nameLabel}<input value={name} onChange={(event) => setName(event.target.value)} placeholder={t.sites.namePh} maxLength="100" required /></label>
-          </fieldset>
-          <fieldset>
-            <legend><span>3</span> {t.sites.step3}</legend>
-            <label className="custom-qty">{t.sites.detailsLabel}<input value={details} onChange={(event) => setDetails(event.target.value)} placeholder={t.sites.detailsPh} maxLength="500" /></label>
-          </fieldset>
-          <div className="boost-summary">
-            <p>{t.sites.project} <strong>{typeName}</strong></p>
-            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.sites.button}</button>
+        <form className="site-picker" onSubmit={sendOrder}>
+          <div className="picker-list">
+            {[[t.sites.groupGeneral, 0, GENERAL_SITE_TYPES], [t.sites.groupBusiness, GENERAL_SITE_TYPES, t.sites.types.length]].map(([title, start, end]) => <div className="picker-group" key={start}>
+              <h3 className="picker-group-title">{title}<span>{end - start}</span></h3>
+              <div className="chips">{t.sites.types.slice(start, end).map(({ name: label }, offset) => {
+                const index = start + offset;
+                const Icon = siteIcons[index];
+                return <button type="button" key={index} className={typeIndex === index ? 'chip active' : 'chip'} aria-pressed={typeIndex === index} onClick={() => setTypeIndex(index)}><Icon size={17} />{label}</button>;
+              })}</div>
+            </div>)}
           </div>
+          <aside className="brief">
+            <span className="brief-tag">{t.sites.briefTag}</span>
+            <div className="brief-icon"><TypeIcon size={26} /></div>
+            <h3 className="brief-title">{typeName}</h3>
+            <p className="brief-desc">{typeDescription}</p>
+            <label className="brief-field">{t.sites.nameLabel}<input value={name} onChange={(event) => setName(event.target.value)} placeholder={t.sites.namePh} maxLength="100" required /></label>
+            <label className="brief-field">{t.sites.detailsLabel}<textarea value={details} onChange={(event) => setDetails(event.target.value)} placeholder={t.sites.detailsPh} maxLength="500" rows="3" /></label>
+            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.sites.button}</button>
+          </aside>
         </form>
       </div>
     </section>
