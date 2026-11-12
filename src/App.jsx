@@ -115,6 +115,8 @@ function SocialOrder({ t, locale }) {
   const [quantity, setQuantity] = useState(1000);
   const [link, setLink] = useState('');
   const typeLabel = t.social.types[boostType];
+  const PlatformLogo = platforms.find(({ id }) => id === platform).Logo;
+  const qtyText = quantity ? quantity.toLocaleString(locale) : '0';
 
   function sendOrder(event) {
     event.preventDefault();
@@ -126,28 +128,36 @@ function SocialOrder({ t, locale }) {
       <div className="wrap">
         <div className="section-label"><span className="label-dot" /> {t.social.label} <span className="label-number">/ 04</span></div>
         <div className="section-heading"><h2>{t.social.titleA}<br /><em>{t.social.titleEm}</em></h2><p>{t.social.textA}<br />{t.social.textB}</p></div>
-        <form className="boost-card" onSubmit={sendOrder}>
-          <fieldset>
-            <legend><span>1</span> {t.social.step1}</legend>
-            <div className="platform-grid">{platforms.map(({ id, Logo }) => <button type="button" key={id} className={`platform ${id.toLowerCase()} ${platform === id ? 'active' : ''}`} aria-pressed={platform === id} onClick={() => setPlatform(id)}><span className="platform-logo"><Logo /></span>{id}</button>)}</div>
-          </fieldset>
-          <fieldset>
-            <legend><span>2</span> {t.social.step2}</legend>
-            <div className="type-grid">{boostTypes.map(({ id, Icon }) => <button type="button" key={id} className={boostType === id ? 'type active' : 'type'} aria-pressed={boostType === id} onClick={() => setBoostType(id)}><Icon size={20} />{t.social.types[id]}</button>)}</div>
-          </fieldset>
-          <fieldset>
-            <legend><span>3</span> {t.social.step3}</legend>
-            <div className="quantity-grid">{quantities.map((value) => <button type="button" key={value} className={quantity === value ? 'qty active' : 'qty'} aria-pressed={quantity === value} onClick={() => setQuantity(value)}>{value.toLocaleString(locale)}</button>)}</div>
-            <label className="custom-qty">{t.social.otherQty}<input type="number" min="10" max="1000000" step="1" value={quantity} onChange={(event) => setQuantity(Number(event.target.value))} required /></label>
-          </fieldset>
-          <fieldset>
-            <legend><span>4</span> {t.social.step4}</legend>
-            <label className="custom-qty">{t.social.accountLabel}<input value={link} onChange={(event) => setLink(event.target.value)} placeholder={t.social.accountPh} maxLength="300" dir="ltr" required /></label>
-          </fieldset>
-          <div className="boost-summary">
-            <p><strong>{quantity ? quantity.toLocaleString(locale) : 0}</strong> {typeLabel.toLowerCase()} {t.social.on} <strong>{platform}</strong></p>
-            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.social.button}</button>
+        <form className="site-picker" onSubmit={sendOrder}>
+          <div className="picker-list">
+            <div className="picker-group">
+              <h3 className="picker-group-title">{t.social.step1}</h3>
+              <div className="chips">{platforms.map(({ id, Logo }) => <button type="button" key={id} className={`chip chip-platform ${id.toLowerCase()} ${platform === id ? 'active' : ''}`} aria-pressed={platform === id} onClick={() => setPlatform(id)}><span className="chip-logo"><Logo /></span>{id}</button>)}</div>
+            </div>
+            <div className="picker-group">
+              <h3 className="picker-group-title">{t.social.step2}</h3>
+              <div className="chips">{boostTypes.map(({ id, Icon }) => <button type="button" key={id} className={boostType === id ? 'chip active' : 'chip'} aria-pressed={boostType === id} onClick={() => setBoostType(id)}><Icon size={17} />{t.social.types[id]}</button>)}</div>
+            </div>
+            <div className="picker-group">
+              <h3 className="picker-group-title">{t.social.step3}</h3>
+              <div className="chips">
+                {quantities.map((value) => <button type="button" key={value} className={quantity === value ? 'chip active' : 'chip'} aria-pressed={quantity === value} onClick={() => setQuantity(value)}>{value.toLocaleString(locale)}</button>)}
+                <label className="chip chip-input">{t.social.otherQty}<input type="number" min="10" max="1000000" step="1" value={quantity} onChange={(event) => setQuantity(Number(event.target.value))} required /></label>
+              </div>
+            </div>
           </div>
+          <aside className="brief receipt">
+            <span className="brief-tag">{t.social.orderTag}</span>
+            <div className="receipt-total"><strong>{qtyText}</strong><span>{typeLabel}</span></div>
+            <div className="receipt-platform"><span className={`chip-logo ${platform.toLowerCase()}`}><PlatformLogo /></span>{platform}</div>
+            <dl className="receipt-rows">
+              <div><dt>{t.social.step1}</dt><dd>{platform}</dd></div>
+              <div><dt>{t.social.step2}</dt><dd>{typeLabel}</dd></div>
+              <div><dt>{t.social.step3}</dt><dd>{qtyText}</dd></div>
+            </dl>
+            <label className="brief-field">{t.social.accountLabel}<input value={link} onChange={(event) => setLink(event.target.value)} placeholder={t.social.accountPh} maxLength="300" dir="ltr" required /></label>
+            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.social.button}</button>
+          </aside>
         </form>
       </div>
     </section>

@@ -96,3 +96,24 @@ html[dir=rtl] .brand-top,html[dir=rtl] .brand-sub{font-family:'Inter',sans-serif
 @media(max-width:650px){.header .brand-top{font-size:28px}.header .brand-cursor{height:22px;width:4px}.header .brand-sub{font-size:7.5px;letter-spacing:.24em}}
 @media(prefers-reduced-motion:reduce){.brand-cursor{animation:none}}
 html[dir=rtl] .brand-top{letter-spacing:-.065em!important}html[dir=rtl] .brand-sub{letter-spacing:.3em!important}
+.chip-logo{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;color:#fff;flex:none}
+.chip-logo svg{width:14px;height:14px}
+.chip-platform{padding-left:9px}
+.chip-platform.instagram .chip-logo,.chip-logo.instagram{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285aeb 90%)}
+.chip-platform.facebook .chip-logo,.chip-logo.facebook{background:#1877f2}
+.chip-platform.tiktok .chip-logo,.chip-logo.tiktok{background:#000}
+.chip-platform.active .chip-logo{box-shadow:0 0 0 2px var(--ink),0 0 0 3px rgba(255,255,255,.35)}
+.chip-input{cursor:text;color:#6b7066;font-size:13px}
+.chip-input input{width:84px;margin-left:4px;padding:0;border:0;border-bottom:1px solid #a9aea3;background:transparent;color:var(--ink);font:inherit;font-size:15px;font-weight:600;outline:none}
+.chip-input:focus-within{background:#fff;border-color:var(--ink)}
+.receipt-total{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px}
+.receipt-total strong{font-family:'Space Grotesk',sans-serif;font-size:58px;font-weight:600;line-height:1;color:var(--lime);letter-spacing:-.02em}
+.receipt-total span{font-size:20px;font-weight:600}
+.receipt-platform{display:inline-flex;align-items:center;gap:8px;margin:14px 0 22px;font-size:14px;color:#b9beb2}
+.receipt-rows{margin:0 0 24px;padding:18px 0;border-top:1px dashed #41463c;border-bottom:1px dashed #41463c}
+.receipt-rows div{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:14px}
+.receipt-rows dt{color:#9ba195}
+.receipt-rows dd{margin:0;font-weight:600}
+html[dir=rtl] .chip-platform{padding-left:14px;padding-right:9px}
+html[dir=rtl] .chip-input input{margin-left:0;margin-right:4px}
+@media(max-width:650px){.receipt-total strong{font-size:46px}}
