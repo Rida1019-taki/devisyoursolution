@@ -127,3 +127,20 @@ html[dir=rtl] .chip-input input{margin-left:0;margin-right:4px}
 html[dir=rtl] .tb-region::before{margin-right:0;margin-left:8px}
 html[dir=rtl] .tb-map{margin-left:0;margin-right:10px}
 @media(max-width:650px){.tb-region{display:none}.tb-map{margin-left:auto}html[dir=rtl] .tb-map{margin-right:auto}.topbar-info .tb-place{width:100%}}
+.footer{padding:0 0 26px}
+.footer-cta{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:52px 0;border-bottom:1px solid #353a31}
+.footer-cta h2{margin:0 0 8px;font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,3.4vw,44px);font-weight:500;line-height:1.1;letter-spacing:0;color:#fff}
+.footer-cta p{margin:0;color:#9ba195;font-size:15px}
+.footer-cta .whatsapp-button{flex:none}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:48px;padding:56px 0 50px}
+.footer-about p{max-width:330px;margin:22px 0 24px;color:#9ba195;font-size:14px;line-height:1.75}
+.footer-grid h3{margin:4px 0 20px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.footer-grid ul{display:grid;gap:13px;margin:0;padding:0;list-style:none}
+.footer-grid li a{color:#9ba195;font-size:14px;transition:color .2s}
+.footer-grid li a:hover{color:var(--lime)}
+.footer-contact a{display:inline-flex;align-items:flex-start;gap:10px;line-height:1.5}
+.footer-contact svg{width:16px;height:16px;margin-top:2px;color:var(--lime);flex:none}
+.footer .footer-bottom{align-items:center;font-size:12px;letter-spacing:.02em;color:#7d8378}
+html[dir=rtl] .footer-cta h2,html[dir=rtl] .footer-grid h3{font-family:'Cairo',sans-serif}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px}.footer-about{grid-column:1 / -1}}
+@media(max-width:650px){.footer-cta{flex-direction:column;align-items:flex-start;padding:42px 0}.footer-cta .whatsapp-button{width:100%;justify-content:center}.footer-grid{padding:44px 0 36px;gap:34px 24px}.footer .footer-bottom{flex-direction:column;align-items:flex-start;gap:12px}}

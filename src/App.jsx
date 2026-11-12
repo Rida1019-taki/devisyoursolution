@@ -25,6 +25,7 @@ const boostTypes = [
 const quantities = [100, 500, 1000, 5000, 10000];
 const siteIcons = [Rocket, Building2, ShoppingCart, Newspaper, CalendarCheck, Smartphone, LayoutDashboard, UtensilsCrossed, Car, Hotel, Scissors, House, Stethoscope, GraduationCap, Dumbbell, Plane, Shirt, Briefcase, PartyPopper, Wrench];
 const GENERAL_SITE_TYPES = 7;
+const FOOTER_SITE_TYPES = [0, 2, 7, 8, 9, 10];
 const socialLinks = [
   { name: 'WhatsApp', url: `https://wa.me/${WHATSAPP_NUMBER}`, Logo: WhatsAppLogo, className: 'whatsapp' },
   { name: 'Instagram', url: INSTAGRAM_URL, Logo: InstagramLogo, className: 'instagram' },
@@ -317,7 +318,43 @@ export default function App() {
           </div>
         </section>
       </main>
-      <footer className="footer"><div className="wrap"><div className="footer-top"><a className="brand footer-brand" href="#accueil" aria-label={t.nav.home} dir="ltr"><BrandMark /></a><p>{t.footer.tagline}</p><div className="footer-social">{socialLinks.map(({ name, url, Logo }) => url ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} aria-label={`${name} (${t.topbar.soon})`}><Logo /></span>)}</div><a href="#accueil" className="back-top">{t.footer.back} <ArrowUpRight size={16} /></a></div><div className="footer-bottom"><span>© {new Date().getFullYear()} DEV IS YOUR SOLUTION</span><span>{t.footer.place}</span><span>{t.footer.services}</span></div></div></footer>
+      <footer className="footer">
+        <div className="wrap">
+          <div className="footer-cta">
+            <div><h2>{t.footer.ctaTitle}</h2><p>{t.footer.ctaText}</p></div>
+            <a className="whatsapp-button" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><WhatsAppLogo /> {t.footer.ctaButton}</a>
+          </div>
+          <div className="footer-grid">
+            <div className="footer-about">
+              <a className="brand footer-brand" href="#accueil" aria-label={t.nav.home} dir="ltr"><BrandMark /></a>
+              <p>{t.footer.about}</p>
+              <div className="footer-social">{socialLinks.map(({ name, url, Logo }) => url ? <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} aria-label={`${name} (${t.topbar.soon})`}><Logo /></span>)}</div>
+            </div>
+            <nav aria-label={t.footer.colServices}>
+              <h3>{t.footer.colServices}</h3>
+              <ul>
+                <li><a href="#sites">{t.nav.sites}</a></li>
+                <li><a href="#sites">{t.footer.mobile}</a></li>
+                <li><a href="#social">{t.nav.social}</a></li>
+                <li><a href="#approche">{t.nav.approach}</a></li>
+              </ul>
+            </nav>
+            <nav aria-label={t.footer.colSites}>
+              <h3>{t.footer.colSites}</h3>
+              <ul>{FOOTER_SITE_TYPES.map((index) => <li key={index}><a href="#sites">{t.sites.types[index].name}</a></li>)}</ul>
+            </nav>
+            <div>
+              <h3>{t.footer.colContact}</h3>
+              <ul className="footer-contact">
+                <li><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><WhatsAppLogo /> WhatsApp</a></li>
+                {INSTAGRAM_URL && <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" dir="ltr"><InstagramLogo /> @dev_is_your_solution</a></li>}
+                <li><a href={MAPS_URL} target="_blank" rel="noopener noreferrer"><MapPin /> {t.contact.city}, {t.contact.region}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer-bottom"><span>© {new Date().getFullYear()} Dev is your Solution. {t.footer.rights}</span><a href="#accueil" className="back-top">{t.footer.back} <ArrowUpRight size={15} /></a></div>
+        </div>
+      </footer>
     </>
   );
 }
