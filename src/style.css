@@ -117,3 +117,13 @@ html[dir=rtl] .brand-top{letter-spacing:-.065em!important}html[dir=rtl] .brand-s
 html[dir=rtl] .chip-platform{padding-left:14px;padding-right:9px}
 html[dir=rtl] .chip-input input{margin-left:0;margin-right:4px}
 @media(max-width:650px){.receipt-total strong{font-size:46px}}
+.tb-place{display:inline-flex;align-items:center;gap:8px;min-width:0;font-size:13px;color:#d9ddd3;white-space:nowrap}
+.tb-pin{color:var(--lime);flex:none}
+.tb-place strong{color:#fff;font-weight:600}
+.tb-region{color:#8e9488;overflow:hidden;text-overflow:ellipsis}
+.tb-region::before{content:'\2014';margin-right:8px;color:#5c6157}
+.tb-map{display:inline-flex;align-items:center;gap:3px;margin-left:10px;padding-bottom:1px;border-bottom:1px solid rgba(216,243,106,.45);color:var(--lime);font-size:12px;font-weight:600;transition:border-color .2s}
+.tb-place:hover .tb-map{border-bottom-color:var(--lime)}
+html[dir=rtl] .tb-region::before{margin-right:0;margin-left:8px}
+html[dir=rtl] .tb-map{margin-left:0;margin-right:10px}
+@media(max-width:650px){.tb-region{display:none}.tb-map{margin-left:auto}html[dir=rtl] .tb-map{margin-right:auto}.topbar-info .tb-place{width:100%}}

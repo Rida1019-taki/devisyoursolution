@@ -224,7 +224,7 @@ export default function App() {
     <>
       <div className="topbar">
         <div className="topbar-info">
-          <a className="tb-item" href={MAPS_URL} target="_blank" rel="noopener noreferrer"><span className="tb-icon tb-location"><MapPin size={15} /></span><span className="tb-text"><small>{t.topbar.location}</small>{t.topbar.place}</span></a>
+          <a className="tb-place" href={MAPS_URL} target="_blank" rel="noopener noreferrer"><MapPin size={14} className="tb-pin" /><strong>{t.contact.city}</strong><span className="tb-region">{t.contact.region}</span><span className="tb-map">{t.topbar.map} <ArrowUpRight size={13} /></span></a>
         </div>
         <div className="topbar-social"><span className="tb-follow">{t.topbar.follow}</span>{socialLinks.map(({ name, url, Logo, className }) => url ? <a key={name} className={`tb-social ${className}`} href={url} target="_blank" rel="noopener noreferrer" aria-label={name}><Logo /></a> : <span key={name} className={`tb-social ${className} soon`} aria-label={`${name} (${t.topbar.soon})`} title={t.topbar.soonTitle}><Logo /></span>)}</div>
       </div>

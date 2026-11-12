@@ -8,7 +8,7 @@ export const translations = {
   fr: {
     meta: { title: 'Dev is your Solution — Web, mobile & social media' },
     nav: { services: 'Services', sites: 'Sites web', social: 'Social media', approach: 'Notre approche', contact: 'Parlons projet', main: 'Navigation principale', home: 'Dev is your Solution, accueil', open: 'Ouvrir le menu', close: 'Fermer le menu', language: 'Langue' },
-    topbar: { location: 'Localisation', place: 'Oued Zem, Béni Mellal-Khénifra, Maroc', follow: 'Suivez-nous', soon: 'bientôt', soonTitle: 'Bientôt disponible' },
+    topbar: { location: 'Localisation', map: 'Voir la carte', place: 'Oued Zem, Béni Mellal-Khénifra, Maroc', follow: 'Suivez-nous', soon: 'bientôt', soonTitle: 'Bientôt disponible' },
     hero: { topLeft: 'STUDIO DIGITAL INDÉPENDANT', topRight: 'CRÉATIVITÉ + TECHNOLOGIE', eyebrow: 'LE DIGITAL, EN PLUS HUMAIN.', titleSpan: 'Le digital', titleRest: ' en toute simplicité.', text: 'Sites web, applications mobiles et social media. On donne vie à vos ambitions digitales.', discover: 'Découvrir nos services', footerLeft: 'FAISONS QUELQUE CHOSE DE GRAND.', scroll: 'SCROLL POUR EXPLORER' },
     ticker: ['DE L’IDÉE À L’IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
     intro: { label: 'QUI SOMMES-NOUS', titleA: 'Une idée. Une vision.', titleB: 'Et tout devient possible.', text: 'Nous aidons les marques et les entrepreneurs à prendre leur place dans le monde digital, avec des expériences aussi belles qu’efficaces.', link: 'FAISONS CONNAISSANCE', photos: [
@@ -53,7 +53,7 @@ export const translations = {
   en: {
     meta: { title: 'Dev is your Solution — Web, mobile & social media' },
     nav: { services: 'Services', sites: 'Websites', social: 'Social media', approach: 'Our approach', contact: 'Let’s talk', main: 'Main navigation', home: 'Dev is your Solution, home', open: 'Open menu', close: 'Close menu', language: 'Language' },
-    topbar: { location: 'Location', place: 'Oued Zem, Béni Mellal-Khénifra, Morocco', follow: 'Follow us', soon: 'coming soon', soonTitle: 'Coming soon' },
+    topbar: { location: 'Location', map: 'View map', place: 'Oued Zem, Béni Mellal-Khénifra, Morocco', follow: 'Follow us', soon: 'coming soon', soonTitle: 'Coming soon' },
     hero: { topLeft: 'INDEPENDENT DIGITAL STUDIO', topRight: 'CREATIVITY + TECHNOLOGY', eyebrow: 'DIGITAL, MORE HUMAN.', titleSpan: 'Digital', titleRest: ' made simple.', text: 'Websites, mobile apps and social media. We bring your digital ambitions to life.', discover: 'Discover our services', footerLeft: 'LET’S BUILD SOMETHING GREAT.', scroll: 'SCROLL TO EXPLORE' },
     ticker: ['FROM IDEA TO IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
     intro: { label: 'WHO WE ARE', titleA: 'One idea. One vision.', titleB: 'And anything becomes possible.', text: 'We help brands and entrepreneurs claim their place in the digital world, with experiences that are as beautiful as they are effective.', link: 'LET’S GET TO KNOW EACH OTHER', photos: [
@@ -98,7 +98,7 @@ export const translations = {
   ar: {
     meta: { title: 'Dev is your Solution — مواقع، تطبيقات وسوشيال ميديا' },
     nav: { services: 'خدماتنا', sites: 'المواقع', social: 'السوشيال ميديا', approach: 'من نحن', contact: 'تواصل معنا', main: 'القائمة الرئيسية', home: 'Dev is your Solution، الرئيسية', open: 'فتح القائمة', close: 'إغلاق القائمة', language: 'اللغة' },
-    topbar: { location: 'موقعنا', place: 'وادي زم، جهة بني ملال خنيفرة، المغرب', follow: 'تابعونا', soon: 'قريباً', soonTitle: 'متوفر قريباً' },
+    topbar: { location: 'موقعنا', map: 'عرض الخريطة', place: 'وادي زم، جهة بني ملال خنيفرة، المغرب', follow: 'تابعونا', soon: 'قريباً', soonTitle: 'متوفر قريباً' },
     hero: { topLeft: 'استوديو رقمي مستقل', topRight: 'إبداع + تكنولوجيا', eyebrow: 'الرقمي بلمسة إنسانية.', titleSpan: 'الرقمي', titleRest: ' بكل بساطة.', text: 'مواقع إلكترونية، تطبيقات هاتف وسوشيال ميديا. نحوّل طموحاتك الرقمية إلى واقع.', discover: 'اكتشف خدماتنا', footerLeft: 'لنصنع شيئاً عظيماً.', scroll: 'مرّر للاستكشاف' },
     ticker: ['من الفكرة إلى النتيجة', 'تصميم المواقع', 'تطبيقات الهاتف', 'السوشيال ميديا'],
     intro: { label: 'من نحن', titleA: 'فكرة. رؤية.', titleB: 'وكل شيء يصبح ممكناً.', text: 'نساعد العلامات التجارية وأصحاب المشاريع على إيجاد مكانهم في العالم الرقمي، بتجارب جميلة وفعّالة في آن واحد.', link: 'تعرّف علينا', photos: [
