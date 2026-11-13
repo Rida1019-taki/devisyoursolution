@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { ArrowDown, ArrowUpRight, Briefcase, Building2, CalendarCheck, Car, Check, ChevronDown, Dumbbell, Eye, Globe, GraduationCap, Heart, Hotel, House, LayoutDashboard, MapPin, Menu, Newspaper, PartyPopper, Plane, Rocket, Scissors, Shirt, ShoppingCart, Smartphone, Stethoscope, Users, UtensilsCrossed, Wrench, X } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Briefcase, Building2, CalendarCheck, Car, Check, ChevronDown, Dumbbell, Eye, Globe, GraduationCap, Heart, Hotel, House, LayoutDashboard, Mail, MapPin, Menu, Newspaper, PartyPopper, Plane, Rocket, Scissors, Shirt, ShoppingCart, Smartphone, Stethoscope, Users, UtensilsCrossed, Wrench, X } from 'lucide-react';
 import { languages, translations } from './i18n.js';
 
 const WHATSAPP_NUMBER = '212674118928';
 const INSTAGRAM_URL = 'https://www.instagram.com/dev_is_your_solution/';
 const FACEBOOK_URL = 'https://www.facebook.com/share/1FfDrLtWRC/';
 const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Oued+Zem,+Maroc';
+const CONTACT_EMAIL = 'devisyoursolution@gmail.com';
 
 const InstagramLogo = () => <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor" /></svg>;
 const FacebookLogo = () => <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>;
@@ -63,6 +64,7 @@ function SocialLinks({ t }) {
           ? <a key={name} className="social-link" href={url} target="_blank" rel="noopener noreferrer">{content}</a>
           : <div key={name} className="social-link disabled">{content}</div>;
       })}
+      <a className="social-link" href={`mailto:${CONTACT_EMAIL}`}><span className="social-logo email"><Mail size={21} /></span><span className="social-text"><strong>Email</strong><small dir="ltr">{CONTACT_EMAIL}</small></span><ArrowUpRight size={18} /></a>
     </div>
   );
 }
@@ -95,14 +97,20 @@ function SiteOrder({ t }) {
               })}</div>
             </div>)}
           </div>
-          <aside className="brief">
-            <span className="brief-tag">{t.sites.briefTag}</span>
-            <div className="brief-icon"><TypeIcon size={26} /></div>
-            <h3 className="brief-title">{typeName}</h3>
-            <p className="brief-desc">{typeDescription}</p>
-            <label className="brief-field">{t.sites.nameLabel}<input value={name} onChange={(event) => setName(event.target.value)} placeholder={t.sites.namePh} maxLength="100" required /></label>
-            <label className="brief-field">{t.sites.detailsLabel}<textarea value={details} onChange={(event) => setDetails(event.target.value)} placeholder={t.sites.detailsPh} maxLength="500" rows="3" /></label>
-            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.sites.button}</button>
+          <aside className="site-brief">
+            <div className="sb-head">
+              <span className="sb-icon"><TypeIcon size={24} /></span>
+              <div>
+                <span className="sb-tag">{t.sites.briefTag}</span>
+                <h3 className="sb-title">{typeName}</h3>
+              </div>
+            </div>
+            <div className="sb-body">
+              <p className="sb-desc">{typeDescription}</p>
+              <label className="sb-field">{t.sites.nameLabel}<input value={name} onChange={(event) => setName(event.target.value)} placeholder={t.sites.namePh} maxLength="100" required /></label>
+              <label className="sb-field">{t.sites.detailsLabel}<textarea value={details} onChange={(event) => setDetails(event.target.value)} placeholder={t.sites.detailsPh} maxLength="500" rows="3" /></label>
+              <button type="submit" className="sb-submit"><WhatsAppLogo /> {t.sites.button}</button>
+            </div>
           </aside>
         </form>
       </div>
@@ -147,17 +155,23 @@ function SocialOrder({ t, locale }) {
               </div>
             </div>
           </div>
-          <aside className="brief receipt">
-            <span className="brief-tag">{t.social.orderTag}</span>
-            <div className="receipt-total"><strong>{qtyText}</strong><span>{typeLabel}</span></div>
-            <div className="receipt-platform"><span className={`chip-logo ${platform.toLowerCase()}`}><PlatformLogo /></span>{platform}</div>
-            <dl className="receipt-rows">
-              <div><dt>{t.social.step1}</dt><dd>{platform}</dd></div>
-              <div><dt>{t.social.step2}</dt><dd>{typeLabel}</dd></div>
-              <div><dt>{t.social.step3}</dt><dd>{qtyText}</dd></div>
-            </dl>
-            <label className="brief-field">{t.social.accountLabel}<input value={link} onChange={(event) => setLink(event.target.value)} placeholder={t.social.accountPh} maxLength="300" dir="ltr" required /></label>
-            <button type="submit" className="whatsapp-button"><WhatsAppLogo /> {t.social.button}</button>
+          <aside className="site-brief order-brief">
+            <div className="sb-head">
+              <span className={`sb-icon sb-platform ${platform.toLowerCase()}`}><PlatformLogo /></span>
+              <div>
+                <span className="sb-tag">{t.social.orderTag}</span>
+                <h3 className="sb-title"><span className="ob-qty">{qtyText}</span> {typeLabel}</h3>
+              </div>
+            </div>
+            <div className="sb-body">
+              <dl className="ob-rows">
+                <div><dt>{t.social.step1}</dt><dd>{platform}</dd></div>
+                <div><dt>{t.social.step2}</dt><dd>{typeLabel}</dd></div>
+                <div><dt>{t.social.step3}</dt><dd>{qtyText}</dd></div>
+              </dl>
+              <label className="sb-field">{t.social.accountLabel}<input value={link} onChange={(event) => setLink(event.target.value)} placeholder={t.social.accountPh} maxLength="300" dir="ltr" required /></label>
+              <button type="submit" className="sb-submit"><WhatsAppLogo /> {t.social.button}</button>
+            </div>
           </aside>
         </form>
       </div>
@@ -349,6 +363,7 @@ export default function App() {
                 <li><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><WhatsAppLogo /> WhatsApp</a></li>
                 {INSTAGRAM_URL && <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" dir="ltr"><InstagramLogo /> @dev_is_your_solution</a></li>}
                 {FACEBOOK_URL && <li><a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" dir="ltr"><FacebookLogo /> Dev is your Solution</a></li>}
+                <li><a href={`mailto:${CONTACT_EMAIL}`} dir="ltr"><Mail /> {CONTACT_EMAIL}</a></li>
                 <li><a href={MAPS_URL} target="_blank" rel="noopener noreferrer"><MapPin /> {t.contact.city}, {t.contact.region}</a></li>
               </ul>
             </div>
