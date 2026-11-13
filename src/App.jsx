@@ -4,7 +4,7 @@ import { languages, translations } from './i18n.js';
 
 const WHATSAPP_NUMBER = '212674118928';
 const INSTAGRAM_URL = 'https://www.instagram.com/dev_is_your_solution/';
-const FACEBOOK_URL = '';
+const FACEBOOK_URL = 'https://www.facebook.com/share/1FfDrLtWRC/';
 const MAPS_URL = 'https://www.google.com/maps/search/?api=1&query=Oued+Zem,+Maroc';
 
 const InstagramLogo = () => <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="12" cy="12" r="4.3" fill="none" stroke="currentColor" strokeWidth="2" /><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor" /></svg>;
@@ -348,6 +348,7 @@ export default function App() {
               <ul className="footer-contact">
                 <li><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer"><WhatsAppLogo /> WhatsApp</a></li>
                 {INSTAGRAM_URL && <li><a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" dir="ltr"><InstagramLogo /> @dev_is_your_solution</a></li>}
+                {FACEBOOK_URL && <li><a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" dir="ltr"><FacebookLogo /> Dev is your Solution</a></li>}
                 <li><a href={MAPS_URL} target="_blank" rel="noopener noreferrer"><MapPin /> {t.contact.city}, {t.contact.region}</a></li>
               </ul>
             </div>
