@@ -326,7 +326,6 @@ export default function App() {
           <div className="contact-extras">
             <div className="location">
               <a className="location-info" href={MAPS_URL} target="_blank" rel="noopener noreferrer"><span className="location-icon"><MapPin size={20} /></span><span><strong>{t.contact.city}</strong><small>{t.contact.region}</small></span><ArrowUpRight size={18} /></a>
-              <iframe title={t.contact.mapTitle} src="https://www.google.com/maps?q=Oued+Zem,+Maroc&z=13&output=embed" loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
             </div>
             <SocialLinks t={t} />
           </div>
