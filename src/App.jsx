@@ -37,6 +37,11 @@ const services = [
   { number: '02', className: 'mobile', target: '#sites', option: 1, image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=900&q=80' },
   { number: '03', className: 'social', target: '#social', option: 2, image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?auto=format&fit=crop&w=900&q=80' },
 ];
+// Add a new project here, then add its texts in i18n.js (projects.items, same order).
+const projects = [
+  { url: 'https://locationvoituremaroc.vercel.app/', image: 'https://locationvoituremaroc.vercel.app/images/hero.jpg', Icon: Car },
+  { url: 'https://voyage-three-eosin.vercel.app/', image: 'https://voyage-three-eosin.vercel.app/assets/hero-LP667NqE.jpg', Icon: Plane },
+];
 const introPhotos = [
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
   'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
@@ -69,6 +74,42 @@ function SocialLinks({ t }) {
   );
 }
 
+function Projects({ t }) {
+  return (
+    <section className="projects" id="projets">
+      <div className="wrap">
+        <div className="section-label"><span className="label-dot" /> {t.projects.label} <span className="label-number">/ 03</span></div>
+        <div className="section-heading"><h2>{t.projects.titleA}<br /><em>{t.projects.titleEm}</em></h2><p>{t.projects.textA}<br />{t.projects.textB}</p></div>
+        <div className="project-grid">
+          {projects.map(({ url, image, Icon }, index) => {
+            const item = t.projects.items[index];
+            const host = new URL(url).host;
+            return <article className="project-card" key={url}>
+              <a className="project-preview" href={url} target="_blank" rel="noopener noreferrer" aria-label={`${t.projects.visit} : ${item.name}`}>
+                <span className="project-bar" dir="ltr"><i /><i /><i /><span>{host}</span></span>
+                <img src={image} alt={item.alt} loading="lazy" />
+              </a>
+              <div className="project-body">
+                <span className="project-category"><Icon size={15} /> {item.category}</span>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <div className="project-tags">{item.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+                <a className="project-link" href={url} target="_blank" rel="noopener noreferrer">{t.projects.visit} <ArrowUpRight size={17} /></a>
+              </div>
+            </article>;
+          })}
+          <a className="project-card project-next" href="#sites">
+            <span className="project-next-star">✳</span>
+            <h3>{t.projects.nextTitle}</h3>
+            <p>{t.projects.nextText}</p>
+            <span className="project-link">{t.projects.nextButton} <ArrowUpRight size={17} /></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SiteOrder({ t }) {
   const [typeIndex, setTypeIndex] = useState(0);
   const [name, setName] = useState('');
@@ -84,7 +125,7 @@ function SiteOrder({ t }) {
   return (
     <section className="site-order" id="sites">
       <div className="wrap">
-        <div className="section-label"><span className="label-dot" /> {t.sites.label} <span className="label-number">/ 03</span></div>
+        <div className="section-label"><span className="label-dot" /> {t.sites.label} <span className="label-number">/ 04</span></div>
         <div className="section-heading"><h2>{t.sites.titleA}<br /><em>{t.sites.titleEm}</em></h2><p>{t.sites.textA}<br />{t.sites.textB}</p></div>
         <form className="site-picker" onSubmit={sendOrder}>
           <div className="picker-list">
@@ -135,7 +176,7 @@ function SocialOrder({ t, locale }) {
   return (
     <section className="boost" id="social">
       <div className="wrap">
-        <div className="section-label"><span className="label-dot" /> {t.social.label} <span className="label-number">/ 04</span></div>
+        <div className="section-label"><span className="label-dot" /> {t.social.label} <span className="label-number">/ 05</span></div>
         <div className="section-heading"><h2>{t.social.titleA}<br /><em>{t.social.titleEm}</em></h2><p>{t.social.textA}<br />{t.social.textB}</p></div>
         <form className="site-picker" onSubmit={sendOrder}>
           <div className="picker-list">
@@ -247,6 +288,7 @@ export default function App() {
         <a className="brand" href="#accueil" aria-label={t.nav.home} dir="ltr"><BrandMark /></a>
         <nav className={menuOpen ? 'nav open' : 'nav'} aria-label={t.nav.main}>
           <a href="#services" onClick={closeMenu}>{t.nav.services}</a>
+          <a href="#projets" onClick={closeMenu}>{t.nav.projects}</a>
           <a href="#sites" onClick={closeMenu}>{t.nav.sites}</a>
           <a href="#social" onClick={closeMenu}>{t.nav.social}</a>
           <a href="#approche" onClick={closeMenu}>{t.nav.approach}</a>
@@ -300,17 +342,19 @@ export default function App() {
           </div>
         </section>
 
+        <Projects t={t} />
+
         <SiteOrder key={`sites-${lang}`} t={t} />
 
         <SocialOrder t={t} locale={locale} />
 
         <section className="statement">
           <div className="statement-image" />
-          <div className="wrap statement-content"><div className="section-label"><span className="label-dot" /> {t.statement.label} <span className="label-number">/ 05</span></div><div><span className="statement-star">✳</span><h2>{t.statement.lines[0]}<br />{t.statement.lines[1]}<br /><em>{t.statement.em}</em></h2><p>{t.statement.text}</p><a href="#contact" className="pill-button">{t.statement.button} <ArrowUpRight size={18} /></a></div></div>
+          <div className="wrap statement-content"><div className="section-label"><span className="label-dot" /> {t.statement.label} <span className="label-number">/ 06</span></div><div><span className="statement-star">✳</span><h2>{t.statement.lines[0]}<br />{t.statement.lines[1]}<br /><em>{t.statement.em}</em></h2><p>{t.statement.text}</p><a href="#contact" className="pill-button">{t.statement.button} <ArrowUpRight size={18} /></a></div></div>
         </section>
 
         <section className="contact wrap" id="contact">
-          <div className="section-label"><span className="label-dot" /> {t.contact.label} <span className="label-number">/ 06</span></div>
+          <div className="section-label"><span className="label-dot" /> {t.contact.label} <span className="label-number">/ 07</span></div>
           <div className="contact-grid"><div className="contact-copy"><h2>{t.contact.titleA}<br /><em>{t.contact.titleEm}</em><span>✳</span></h2><p>{t.contact.text}</p><div className="availability"><span><Check size={14} /></span> {t.contact.available}</div></div>
             <form onSubmit={prepareMessage} className="contact-form">
               <div className="form-head"><strong>{t.contact.formTitle}</strong><small>{t.contact.formSub}</small></div>
@@ -346,6 +390,7 @@ export default function App() {
             <nav aria-label={t.footer.colServices}>
               <h3>{t.footer.colServices}</h3>
               <ul>
+                <li><a href="#projets">{t.nav.projects}</a></li>
                 <li><a href="#sites">{t.nav.sites}</a></li>
                 <li><a href="#sites">{t.footer.mobile}</a></li>
                 <li><a href="#social">{t.nav.social}</a></li>

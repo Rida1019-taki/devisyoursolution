@@ -7,7 +7,7 @@ export const languages = [
 export const translations = {
   fr: {
     meta: { title: 'Dev is your Solution — Web, mobile & social media' },
-    nav: { services: 'Services', sites: 'Sites web', social: 'Social media', approach: 'Notre approche', contact: 'Parlons projet', main: 'Navigation principale', home: 'Dev is your Solution, accueil', open: 'Ouvrir le menu', close: 'Fermer le menu', language: 'Langue' },
+    nav: { services: 'Services', projects: 'Réalisations', sites: 'Sites web', social: 'Social media', approach: 'Notre approche', contact: 'Parlons projet', main: 'Navigation principale', home: 'Dev is your Solution, accueil', open: 'Ouvrir le menu', close: 'Fermer le menu', language: 'Langue' },
     topbar: { location: 'Localisation', map: 'Voir la carte', place: 'Oued Zem, Béni Mellal-Khénifra, Maroc', follow: 'Suivez-nous', soon: 'bientôt', soonTitle: 'Bientôt disponible' },
     hero: { topLeft: 'STUDIO DIGITAL INDÉPENDANT', topRight: 'CRÉATIVITÉ + TECHNOLOGIE', eyebrow: 'LE DIGITAL, EN PLUS HUMAIN.', titleSpan: 'Le digital', titleRest: ' en toute simplicité.', text: 'Sites web, applications mobiles et social media. On donne vie à vos ambitions digitales.', discover: 'Découvrir nos services', footerLeft: 'FAISONS QUELQUE CHOSE DE GRAND.', scroll: 'SCROLL POUR EXPLORER' },
     ticker: ['DE L’IDÉE À L’IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
@@ -20,6 +20,10 @@ export const translations = {
       { category: 'WEB DESIGN & DÉVELOPPEMENT', title: 'Des sites qui font\nla différence.', description: 'Landing pages et sites web sur mesure, pensés pour captiver votre audience et transformer les visites en opportunités.', tags: ['Landing pages', 'Sites vitrines', 'E-commerce'], alt: 'Ordinateur portable affichant un tableau de bord web' },
       { category: 'APPLICATIONS MOBILES', title: 'Vos idées, dans\nleur poche.', description: 'Des applications mobiles intuitives et performantes qui rapprochent votre marque de vos utilisateurs, partout et à tout moment.', tags: ['iOS & Android', 'UI / UX', 'Développement'], alt: 'Smartphone tenu en main avec des applications' },
       { category: 'SOCIAL MEDIA', title: 'Faites parler\nde vous.', description: 'Développez votre présence sur les réseaux sociaux avec des solutions adaptées à vos objectifs de visibilité et d’engagement.', tags: ['Abonnés', 'Likes & commentaires', 'Vues'], alt: 'Icônes de réseaux sociaux sur un smartphone' },
+    ] },
+    projects: { label: 'NOS RÉALISATIONS', titleA: 'Des projets', titleEm: 'déjà en ligne.', textA: 'Quelques sites que nous avons conçus et développés.', textB: 'Cliquez pour les visiter en vrai.', visit: 'Voir le site', nextTitle: 'Votre projet, ici bientôt ?', nextText: 'Dites-nous ce que vous voulez construire, on s’occupe du reste.', nextButton: 'Démarrer mon projet', items: [
+      { name: 'Location Voiture Maroc', category: 'Location de voitures', description: 'Site d’agence de location : flotte avec fiches détaillées, réservation en ligne, offres, tarifs dégressifs et agences partout au Maroc.', tags: ['Réservation', 'Catalogue', 'Responsive'], alt: 'Aperçu du site Location Voiture Maroc' },
+      { name: 'Voyage', category: 'Agence de voyage', description: 'Site d’agence de voyage sur mesure : destinations inspirantes, circuits, approche personnalisée, témoignages et demande de voyage.', tags: ['Destinations', 'Circuits', 'Responsive'], alt: 'Aperçu du site Voyage' },
     ] },
     sites: { label: 'VOTRE SITE', titleA: 'Quel site', titleEm: 'voulez-vous ?', textA: 'Choisissez le type de projet qui vous correspond.', textB: 'On en parle directement sur WhatsApp.', step1: 'Type de site', briefTag: 'Votre brief', groupGeneral: 'Par type de site', groupBusiness: 'Par activité', step2: 'Votre nom', step3: 'Votre idée', nameLabel: 'Nom ou entreprise', namePh: 'Ex : Café Atlas', detailsLabel: 'Décrivez votre projet (optionnel)', detailsPh: 'Pages, fonctionnalités, exemples...', project: 'Projet :', button: 'Demander sur WhatsApp', types: [
       { name: 'Landing page', description: 'Une page percutante pour vendre un produit ou une offre.' },
@@ -52,7 +56,7 @@ export const translations = {
 
   en: {
     meta: { title: 'Dev is your Solution — Web, mobile & social media' },
-    nav: { services: 'Services', sites: 'Websites', social: 'Social media', approach: 'Our approach', contact: 'Let’s talk', main: 'Main navigation', home: 'Dev is your Solution, home', open: 'Open menu', close: 'Close menu', language: 'Language' },
+    nav: { services: 'Services', projects: 'Projects', sites: 'Websites', social: 'Social media', approach: 'Our approach', contact: 'Let’s talk', main: 'Main navigation', home: 'Dev is your Solution, home', open: 'Open menu', close: 'Close menu', language: 'Language' },
     topbar: { location: 'Location', map: 'View map', place: 'Oued Zem, Béni Mellal-Khénifra, Morocco', follow: 'Follow us', soon: 'coming soon', soonTitle: 'Coming soon' },
     hero: { topLeft: 'INDEPENDENT DIGITAL STUDIO', topRight: 'CREATIVITY + TECHNOLOGY', eyebrow: 'DIGITAL, MORE HUMAN.', titleSpan: 'Digital', titleRest: ' made simple.', text: 'Websites, mobile apps and social media. We bring your digital ambitions to life.', discover: 'Discover our services', footerLeft: 'LET’S BUILD SOMETHING GREAT.', scroll: 'SCROLL TO EXPLORE' },
     ticker: ['FROM IDEA TO IMPACT', 'WEB DESIGN', 'MOBILE APPS', 'SOCIAL MEDIA'],
@@ -65,6 +69,10 @@ export const translations = {
       { category: 'WEB DESIGN & DEVELOPMENT', title: 'Websites that make\na difference.', description: 'Custom landing pages and websites, designed to captivate your audience and turn visits into opportunities.', tags: ['Landing pages', 'Business websites', 'E-commerce'], alt: 'Laptop showing a web dashboard' },
       { category: 'MOBILE APPS', title: 'Your ideas, in\ntheir pocket.', description: 'Intuitive, high-performance mobile apps that bring your brand closer to your users, anywhere, anytime.', tags: ['iOS & Android', 'UI / UX', 'Development'], alt: 'Hand holding a smartphone with apps' },
       { category: 'SOCIAL MEDIA', title: 'Get people\ntalking.', description: 'Grow your social media presence with solutions tailored to your visibility and engagement goals.', tags: ['Followers', 'Likes & comments', 'Views'], alt: 'Social media icons on a smartphone' },
+    ] },
+    projects: { label: 'OUR WORK', titleA: 'Projects', titleEm: 'already live.', textA: 'A few websites we designed and built.', textB: 'Click to visit them for real.', visit: 'Visit website', nextTitle: 'Your project, here next?', nextText: 'Tell us what you want to build, we take care of the rest.', nextButton: 'Start my project', items: [
+      { name: 'Location Voiture Maroc', category: 'Car rental', description: 'Car rental agency website: fleet with detailed listings, online booking, offers, long-term pricing and agencies across Morocco.', tags: ['Booking', 'Catalog', 'Responsive'], alt: 'Preview of the Location Voiture Maroc website' },
+      { name: 'Voyage', category: 'Travel agency', description: 'Tailor-made travel agency website: inspiring destinations, tours, a personal approach, testimonials and trip requests.', tags: ['Destinations', 'Tours', 'Responsive'], alt: 'Preview of the Voyage website' },
     ] },
     sites: { label: 'YOUR WEBSITE', titleA: 'Which website', titleEm: 'do you want?', textA: 'Choose the type of project that fits you.', textB: 'Let’s discuss it directly on WhatsApp.', step1: 'Website type', briefTag: 'Your brief', groupGeneral: 'By website type', groupBusiness: 'By business', step2: 'Your name', step3: 'Your idea', nameLabel: 'Name or company', namePh: 'e.g. Café Atlas', detailsLabel: 'Describe your project (optional)', detailsPh: 'Pages, features, examples...', project: 'Project:', button: 'Ask on WhatsApp', types: [
       { name: 'Landing page', description: 'A powerful page to sell a product or an offer.' },
@@ -97,7 +105,7 @@ export const translations = {
 
   ar: {
     meta: { title: 'Dev is your Solution — مواقع، تطبيقات وسوشيال ميديا' },
-    nav: { services: 'خدماتنا', sites: 'المواقع', social: 'السوشيال ميديا', approach: 'من نحن', contact: 'تواصل معنا', main: 'القائمة الرئيسية', home: 'Dev is your Solution، الرئيسية', open: 'فتح القائمة', close: 'إغلاق القائمة', language: 'اللغة' },
+    nav: { services: 'خدماتنا', projects: 'أعمالنا', sites: 'المواقع', social: 'السوشيال ميديا', approach: 'من نحن', contact: 'تواصل معنا', main: 'القائمة الرئيسية', home: 'Dev is your Solution، الرئيسية', open: 'فتح القائمة', close: 'إغلاق القائمة', language: 'اللغة' },
     topbar: { location: 'موقعنا', map: 'عرض الخريطة', place: 'وادي زم، جهة بني ملال خنيفرة، المغرب', follow: 'تابعونا', soon: 'قريباً', soonTitle: 'متوفر قريباً' },
     hero: { topLeft: 'استوديو رقمي مستقل', topRight: 'إبداع + تكنولوجيا', eyebrow: 'الرقمي بلمسة إنسانية.', titleSpan: 'الرقمي', titleRest: ' بكل بساطة.', text: 'مواقع إلكترونية، تطبيقات هاتف وسوشيال ميديا. نحوّل طموحاتك الرقمية إلى واقع.', discover: 'اكتشف خدماتنا', footerLeft: 'لنصنع شيئاً عظيماً.', scroll: 'مرّر للاستكشاف' },
     ticker: ['من الفكرة إلى النتيجة', 'تصميم المواقع', 'تطبيقات الهاتف', 'السوشيال ميديا'],
@@ -110,6 +118,10 @@ export const translations = {
       { category: 'تصميم وتطوير المواقع', title: 'مواقع تصنع\nالفرق.', description: 'صفحات هبوط ومواقع على المقاس، مصممة لجذب جمهورك وتحويل الزيارات إلى فرص حقيقية.', tags: ['صفحات هبوط', 'مواقع تعريفية', 'متاجر إلكترونية'], alt: 'حاسوب محمول يعرض لوحة تحكم' },
       { category: 'تطبيقات الهاتف', title: 'أفكارك، في\nجيب عملائك.', description: 'تطبيقات هاتف سهلة وسريعة تقرّب علامتك التجارية من مستخدميك، في كل مكان وزمان.', tags: ['iOS و Android', 'UI / UX', 'تطوير'], alt: 'هاتف ذكي في اليد مع تطبيقات' },
       { category: 'السوشيال ميديا', title: 'اجعل الجميع\nيتحدث عنك.', description: 'طوّر حضورك على مواقع التواصل الاجتماعي بحلول تناسب أهدافك في الظهور والتفاعل.', tags: ['متابعون', 'إعجابات وتعليقات', 'مشاهدات'], alt: 'أيقونات مواقع التواصل على هاتف ذكي' },
+    ] },
+    projects: { label: 'أعمالنا', titleA: 'مشاريع', titleEm: 'منشورة على الإنترنت.', textA: 'بعض المواقع التي صممناها وطوّرناها.', textB: 'اضغط لزيارتها مباشرة.', visit: 'زيارة الموقع', nextTitle: 'مشروعك هنا قريباً؟', nextText: 'أخبرنا بما تريد بناءه، ونحن نتكفل بالباقي.', nextButton: 'ابدأ مشروعي', items: [
+      { name: 'Location Voiture Maroc', category: 'كراء السيارات', description: 'موقع وكالة كراء السيارات: أسطول بتفاصيل كاملة لكل سيارة، حجز أونلاين، عروض، أسعار حسب المدة ووكالات في جميع أنحاء المغرب.', tags: ['حجز أونلاين', 'كتالوج', 'متجاوب'], alt: 'معاينة موقع Location Voiture Maroc' },
+      { name: 'Voyage', category: 'وكالة أسفار', description: 'موقع وكالة أسفار على المقاس: وجهات ملهمة، رحلات منظمة، مقاربة شخصية، شهادات الزبناء وطلب رحلة.', tags: ['وجهات', 'رحلات', 'متجاوب'], alt: 'معاينة موقع Voyage' },
     ] },
     sites: { label: 'موقعك', titleA: 'أي موقع', titleEm: 'تريد؟', textA: 'اختر نوع المشروع الذي يناسبك.', textB: 'نتحدث عنه مباشرة على واتساب.', step1: 'نوع الموقع', briefTag: 'ملخص طلبك', groupGeneral: 'حسب نوع الموقع', groupBusiness: 'حسب النشاط', step2: 'اسمك', step3: 'فكرتك', nameLabel: 'الاسم أو اسم الشركة', namePh: 'مثال: مقهى أطلس', detailsLabel: 'صف مشروعك (اختياري)', detailsPh: 'الصفحات، الخصائص، أمثلة...', project: 'المشروع:', button: 'اطلب عبر واتساب', types: [
       { name: 'صفحة هبوط', description: 'صفحة قوية لبيع منتج أو عرض.' },
