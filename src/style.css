@@ -200,3 +200,17 @@ html[dir=rtl] .sb-title{font-family:'Cairo',sans-serif;font-weight:700}
 @media(max-width:1100px){.nav a[href="#projets"]{display:none}}
 @media(max-width:900px){.project-grid{grid-template-columns:1fr}.project-next{display:flex;flex-direction:column;align-items:flex-start;gap:16px}.project-next .project-link{margin-top:6px}}
 @media(max-width:650px){.projects{padding:85px 0 90px}.project-body,.project-next{padding:24px 20px}.project-body h3,.project-next h3{font-size:25px}.nav a[href="#projets"]{display:block}}
+.designs{background:#e8eae2;padding:110px 0 120px}
+.design-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.design-card{margin:0;display:flex;flex-direction:column;gap:16px}
+.design-card img{width:100%;height:auto;aspect-ratio:4 / 5;display:block;border-radius:16px;box-shadow:0 1px 0 #c5c9bf,0 24px 50px -30px rgba(27,29,25,.45);transition:transform .35s}
+.design-card:hover img{transform:translateY(-6px) rotate(-.6deg)}
+.design-card figcaption{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;align-items:baseline}
+.design-card figcaption span{grid-row:span 2;font-size:11px;font-weight:700;letter-spacing:1px;color:#92988c}
+.design-card figcaption strong{font-family:Space Grotesk,sans-serif;font-weight:500;font-size:20px}
+.design-card figcaption small{font-size:12px;color:#72776c}
+.design-cta{margin-top:50px;border-top:1px solid #c5c9bf;padding-top:34px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.design-cta p{margin:0;font-size:17px;color:#555a51}
+.design-cta .whatsapp-button{border:0;cursor:pointer;width:auto}
+@media(max-width:900px){.design-grid{grid-template-columns:repeat(3,minmax(240px,1fr));overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 30px;scrollbar-width:none}.design-grid::-webkit-scrollbar{display:none}.design-card{scroll-snap-align:start}}
+@media(max-width:650px){.designs{padding:85px 0 90px}.design-grid{grid-template-columns:repeat(3,78%)}.design-cta{flex-direction:column;align-items:stretch;text-align:center}}

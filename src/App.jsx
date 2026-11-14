@@ -42,6 +42,7 @@ const projects = [
   { url: 'https://locationvoituremaroc.vercel.app/', image: 'https://locationvoituremaroc.vercel.app/images/hero.jpg', Icon: Car },
   { url: 'https://voyage-three-eosin.vercel.app/', image: 'https://voyage-three-eosin.vercel.app/assets/hero-LP667NqE.jpg', Icon: Plane },
 ];
+const designs = ['design-web', 'design-mobile', 'design-social'];
 const introPhotos = [
   'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1400&q=80',
   'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
@@ -110,6 +111,27 @@ function Projects({ t }) {
   );
 }
 
+function Designs({ t }) {
+  return (
+    <section className="designs" id="design">
+      <div className="wrap">
+        <div className="section-label"><span className="label-dot" /> {t.designs.label} <span className="label-number">/ 04</span></div>
+        <div className="section-heading"><h2>{t.designs.titleA}<br /><em>{t.designs.titleEm}</em></h2><p>{t.designs.textA}<br />{t.designs.textB}</p></div>
+        <div className="design-grid">
+          {designs.map((file, index) => <figure className="design-card" key={file}>
+            <img src={`/designs/${file}.webp`} alt={t.designs.items[index].alt} width="1080" height="1350" loading="lazy" />
+            <figcaption><span>N°0{index + 1}</span><strong>{t.designs.items[index].caption}</strong><small>{t.designs.format}</small></figcaption>
+          </figure>)}
+        </div>
+        <div className="design-cta">
+          <p>{t.designs.ctaText}</p>
+          <button type="button" className="whatsapp-button" onClick={() => openWhatsApp(t.designs.message)}><WhatsAppLogo /> {t.designs.button}</button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function SiteOrder({ t }) {
   const [typeIndex, setTypeIndex] = useState(0);
   const [name, setName] = useState('');
@@ -125,7 +147,7 @@ function SiteOrder({ t }) {
   return (
     <section className="site-order" id="sites">
       <div className="wrap">
-        <div className="section-label"><span className="label-dot" /> {t.sites.label} <span className="label-number">/ 04</span></div>
+        <div className="section-label"><span className="label-dot" /> {t.sites.label} <span className="label-number">/ 05</span></div>
         <div className="section-heading"><h2>{t.sites.titleA}<br /><em>{t.sites.titleEm}</em></h2><p>{t.sites.textA}<br />{t.sites.textB}</p></div>
         <form className="site-picker" onSubmit={sendOrder}>
           <div className="picker-list">
@@ -176,7 +198,7 @@ function SocialOrder({ t, locale }) {
   return (
     <section className="boost" id="social">
       <div className="wrap">
-        <div className="section-label"><span className="label-dot" /> {t.social.label} <span className="label-number">/ 05</span></div>
+        <div className="section-label"><span className="label-dot" /> {t.social.label} <span className="label-number">/ 06</span></div>
         <div className="section-heading"><h2>{t.social.titleA}<br /><em>{t.social.titleEm}</em></h2><p>{t.social.textA}<br />{t.social.textB}</p></div>
         <form className="site-picker" onSubmit={sendOrder}>
           <div className="picker-list">
@@ -344,17 +366,19 @@ export default function App() {
 
         <Projects t={t} />
 
+        <Designs t={t} />
+
         <SiteOrder key={`sites-${lang}`} t={t} />
 
         <SocialOrder t={t} locale={locale} />
 
         <section className="statement">
           <div className="statement-image" />
-          <div className="wrap statement-content"><div className="section-label"><span className="label-dot" /> {t.statement.label} <span className="label-number">/ 06</span></div><div><span className="statement-star">✳</span><h2>{t.statement.lines[0]}<br />{t.statement.lines[1]}<br /><em>{t.statement.em}</em></h2><p>{t.statement.text}</p><a href="#contact" className="pill-button">{t.statement.button} <ArrowUpRight size={18} /></a></div></div>
+          <div className="wrap statement-content"><div className="section-label"><span className="label-dot" /> {t.statement.label} <span className="label-number">/ 07</span></div><div><span className="statement-star">✳</span><h2>{t.statement.lines[0]}<br />{t.statement.lines[1]}<br /><em>{t.statement.em}</em></h2><p>{t.statement.text}</p><a href="#contact" className="pill-button">{t.statement.button} <ArrowUpRight size={18} /></a></div></div>
         </section>
 
         <section className="contact wrap" id="contact">
-          <div className="section-label"><span className="label-dot" /> {t.contact.label} <span className="label-number">/ 07</span></div>
+          <div className="section-label"><span className="label-dot" /> {t.contact.label} <span className="label-number">/ 08</span></div>
           <div className="contact-grid"><div className="contact-copy"><h2>{t.contact.titleA}<br /><em>{t.contact.titleEm}</em><span>✳</span></h2><p>{t.contact.text}</p><div className="availability"><span><Check size={14} /></span> {t.contact.available}</div></div>
             <form onSubmit={prepareMessage} className="contact-form">
               <div className="form-head"><strong>{t.contact.formTitle}</strong><small>{t.contact.formSub}</small></div>
@@ -394,6 +418,7 @@ export default function App() {
                 <li><a href="#sites">{t.nav.sites}</a></li>
                 <li><a href="#sites">{t.footer.mobile}</a></li>
                 <li><a href="#social">{t.nav.social}</a></li>
+                <li><a href="#design">{t.designs.nav}</a></li>
                 <li><a href="#approche">{t.nav.approach}</a></li>
               </ul>
             </nav>
